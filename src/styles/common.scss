@@ -1,0 +1,13 @@
+@import './vars/colors.scss';
+@import './vars/typography.scss';
+
+:host,
+:root {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.spacer {
+  flex: 1;
+}
