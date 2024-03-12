@@ -1,4 +1,8 @@
-$vertical-spacing: 1.6rem;
+$common-spacing: 1.6rem;
+$common-border-radius: 0.4rem;
 
-$toolbar-height: 4rem;
+$gutter: $common-spacing;
+$vertical-spacing: $common-spacing + 0.4rem;
+
+$toolbar-height: 4.3rem;
 

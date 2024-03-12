@@ -9,11 +9,9 @@
 :host,
 :root {
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-.spacer {
+.spacer { //todo: this is a util class
   flex: 1;
 }
 
