@@ -1,7 +1,6 @@
 :root {
   --angular-blue: #1976d2;
 }
-
 $angular-blue: var(--angular-blue);
 
 $text-body: #333;
@@ -9,6 +8,8 @@ $header-bg: $angular-blue;
 $hover-blue: #125699;
 $white: white;
 $svg-smoke: #888;
+$dark-grey: #696767;
+$shadow: #00000059;
 
 $card-border: #eee;
 $card-bg: #fafafa;

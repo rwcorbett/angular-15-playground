@@ -30,10 +30,6 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: $common-spacing;
-
-  button.card {
-    flex: 1 1 auto;
-  }
 }
 
 .card {
@@ -41,9 +37,7 @@
   border-radius: $common-border-radius;
   border: 1px solid $card-border;
   background-color: $card-bg;
-  // height: 40px;
-  // width: 200px;
-  margin: 0 $common-spacing $vertical-spacing $common-spacing;
+  margin: $vertical-spacing $common-spacing;
   padding: $common-spacing;
   display: flex;
   flex-direction: row;
@@ -52,8 +46,27 @@
   transition: all 0.2s ease-in-out;
 
   &.card-small {
-    height: 16px;
-    width: 168px;
+    flex: 1 1 auto;
+    min-width: 33%;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 17px $shadow;
+    }
+
+    .material-icons {
+      position: absolute;
+      left: 3px;
+
+      path {
+        fill: $dark-grey;
+      }
+    }
+
+    @media screen and (max-width: 767px) {}
+
   }
 
   &.highlight-card {
@@ -92,38 +105,6 @@
   //     visibility: hidden;
   //   }
   // }
-
-  &.highlight-card span {
-    margin-left: 60px; //todo: is this needed?
-
-    @media screen and (max-width: 767px) {
-      margin-left: 72px;
-    }
-  }
-
-  &:not(:last-child) {
-    margin-right: 0;
-  }
-
-  &:not(.highlight-card) {
-    cursor: pointer;
-  }
-
-  @media screen and (max-width: 767px) {
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-  }
-
-  &:not(.highlight-card):hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-  }
-
-  &:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
-  }
 }
 
 footer {
