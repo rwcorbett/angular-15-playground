@@ -32,11 +32,13 @@
               "src/assets/styles/**/*.*"
             ],
             "styles": [
+              "src/assets/vendor/tailwindcss/preflight.css",
               "src/styles/common.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/styles"
+                "src/styles",
+                "src/styles/**"
               ]
             },
             "scripts": []
@@ -105,6 +107,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/vendor/tailwindcss/preflight.css",
               "src/styles/common.scss"
             ],
             "scripts": []

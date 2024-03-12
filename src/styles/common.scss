@@ -1,5 +1,8 @@
+@import '../assets/vendor/tailwindcss/preflight.css';
+
 @import './vars/colors.scss';
 @import './vars/typography.scss';
+@import './vars/layout.scss';
 
 @import './components/terminal.scss';
 
@@ -17,18 +20,14 @@
 a,
 a:visited,
 a:hover {
-  color: #1976d2;
+  color: $hover-blue;
   text-decoration: none;
-}
-
-a:hover {
-  color: #125699;
 }
 
 svg {
 
   .material-icons path {
-    fill: #888;
+    fill: $svg-smoke;
   }
 
   .material-icons {

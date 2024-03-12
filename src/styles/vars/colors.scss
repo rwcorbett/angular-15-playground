@@ -1,3 +1,15 @@
+:root {
+  --angular-blue: #1976d2;
+}
+
+$angular-blue: var(--angular-blue);
+
 $text-body: #333;
-$header-bg: #1976d2;
+$header-bg: $angular-blue;
+$hover-blue: #125699;
 $white: white;
+$svg-smoke: #888;
+
+$card-border: #eee;
+$card-bg: #fafafa;
+

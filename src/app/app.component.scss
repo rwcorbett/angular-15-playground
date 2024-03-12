@@ -2,11 +2,12 @@
 @import '../styles/common.scss';
 
 .toolbar {
-  position: absolute;
+  position: static;
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: $toolbar-height;
+  margin-bottom: $vertical-spacing;
   display: flex;
   align-items: center;
   background-color: $header-bg;
@@ -29,16 +30,17 @@
 
 .card-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   margin-top: 16px;
 }
 
 .card {
   all: unset;
   border-radius: 4px;
-  border: 1px solid #eee;
-  background-color: #fafafa;
+  border: 1px solid $card-border;
+  background-color: $card-bg;
   height: 40px;
   width: 200px;
   margin: 0 8px 16px;
