@@ -2,13 +2,12 @@
 <div class="toolbar" role="banner">
   <img width="40" alt="Angular Logo"
     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
-  <h2>Welcome</h2>
+  <h1>Welcome</h1>
 </div>
 
 <div class="content" role="main">
 
-  <!-- Highlight Card -->
-  <div class="card highlight-card">
+  <div class="card highlight-card version-card">
 
     <svg id="rocket" xmlns="http://www.w3.org/2000/svg" width="101.678" height="101.678" viewBox="0 0 101.678 101.678">
       <title>Rocket Ship</title>
@@ -36,7 +35,6 @@
 
     <p>{{ title }} app is running Angular Version 13.3.0!</p>
   </div>
-
   <div class="terminal">
     <pre>
 Angular CLI: 13.3.11
@@ -46,61 +44,30 @@ Angular: 13.3.12
     </pre>
   </div>
 
-  <!-- Next Steps -->
-  <input type="hidden" #selection>
+  <div class="tabs">
+    <input type="hidden" #tabSelection />
 
-  <div class="card-container">
-    <button class="card card-small" (click)="selection.value = 'component'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>New Component</span>
-    </button>
+    <div role="tablist" aria-labelledby="">
+      <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1"
+        class="card card-small" (click)="tabSelection.value = 'basics'" tabindex="0">
+        <span class="focus">Basics</span>
+      </button>
+      <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-1"
+        class="card card-small" (click)="tabSelection.value = 'cli'" tabindex="0">
+        <span class="focus">CLI</span>
+      </button>
+    </div>
 
-    <button class="card card-small" (click)="selection.value = 'material'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Angular Material</span>
-    </button>
-
-    <button class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Add PWA Support</span>
-    </button>
-
-    <button class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Add Dependency</span>
-    </button>
-
-    <button class="card card-small" (click)="selection.value = 'test'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Run and Watch Tests</span>
-    </button>
-
-    <button class="card card-small" (click)="selection.value = 'build'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Build for Production</span>
-    </button>
-  </div>
-
-  <!-- Terminal -->
-  <div class="terminal" [ngSwitch]="selection.value">
-    <pre *ngSwitchDefault>ng generate component xyz</pre>
-    <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
-    <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
-    <pre *ngSwitchCase="'dependency'">ng add _____</pre>
-    <pre *ngSwitchCase="'test'">ng test</pre>
-    <pre *ngSwitchCase="'build'">ng build</pre>
+    <div [ngSwitch]="tabSelection.value">
+      <div *ngSwitchDefault></div>
+      <!-- todo: fix `labelled-by` -->
+      <div *ngSwitchCase="'basics'" class="tabs--tabs-wrapper" id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
+        <app-tab-basics></app-tab-basics>
+      </div>
+      <div *ngSwitchCase="'cli'" class="tabs--tabs-wrapper" id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
+        <app-tab-cli></app-tab-cli>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
