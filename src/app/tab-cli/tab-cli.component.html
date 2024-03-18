@@ -1,54 +1,31 @@
 <div class="container-wrapper tab-cli">
 
-  <input type="hidden" #selection>
+  <input type="hidden" #selectionCLI>
 
   <h2 class="card highlight-card">ng CLI</h2>
 
   <div class="card-container">
-    <button class="card card-small" (click)="selection.value = 'component'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>New Component</span>
+    <button class="card card-small" (click)="selectionCLI.value = 'component'" tabindex="0">
+      <app-card-label cardName="New Component"></app-card-label>
     </button>
-
-    <button class="card card-small" (click)="selection.value = 'material'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Angular Material</span>
+    <button class="card card-small" (click)="selectionCLI.value = 'material'" tabindex="0">
+      <app-card-label cardName="Angular Material"></app-card-label>
     </button>
-
-    <button class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Add PWA Support</span>
+    <button class="card card-small" (click)="selectionCLI.value = 'pwa'" tabindex="0">
+      <app-card-label cardName="Add PWA Support"></app-card-label>
     </button>
-
-    <button class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Add Dependency</span>
+    <button class="card card-small" (click)="selectionCLI.value = 'dependency'" tabindex="0">
+      <app-card-label cardName="Add Dependency"></app-card-label>
     </button>
-
-    <button class="card card-small" (click)="selection.value = 'test'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Run and Watch Tests</span>
+    <button class="card card-small" (click)="selectionCLI.value = 'test'" tabindex="0">
+      <app-card-label cardName="Run and Watch Tests"></app-card-label>
     </button>
-
-    <button class="card card-small" (click)="selection.value = 'build'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Build for Production</span>
+    <button class="card card-small" (click)="selectionCLI.value = 'build'" tabindex="0">
+      <app-card-label cardName="Build for Production"></app-card-label>
     </button>
   </div>
 
-  <div class="terminal" [ngSwitch]="selection.value">
+  <div class="terminal" [ngSwitch]="selectionCLI.value">
     <pre *ngSwitchDefault>... click to view</pre>
     <pre *ngSwitchCase="'component'">ng generate component xyz</pre>
     <pre *ngSwitchCase="'material'">ng add @angular/material</pre>

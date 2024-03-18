@@ -5,15 +5,40 @@
   <h2 class="card highlight-card">ng Basics</h2>
 
   <div class="card-container">
-    <button class="card card-small" (click)="selectionBasic.value = 'thing'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Thing</span>
+    <button class="card card-small" (click)="selectionBasic.value = 'Components'" tabindex="0">
+      <app-card-label cardName="Components"></app-card-label>
+    </button>
+    <button class="card card-small" (click)="selectionBasic.value = 'Templates'" tabindex="0">
+      <app-card-label cardName="Templates"></app-card-label>
+    </button>
+    <button class="card card-small" (click)="selectionBasic.value = 'Modules'" tabindex="0">
+      <app-card-label cardName="Modules"></app-card-label>
+    </button>
+    <button class="card card-small" (click)="selectionBasic.value = 'DependencyInjection'" tabindex="0">
+      <app-card-label cardName="Dependency Injection"></app-card-label>
+    </button>
+    <button class="card card-small" (click)="selectionBasic.value = 'Services'" tabindex="0">
+      <app-card-label cardName="Services"></app-card-label>
+    </button>
+    <button class="card card-small" (click)="selectionBasic.value = 'Routing'" tabindex="0">
+      <app-card-label cardName="Routing"></app-card-label>
     </button>
   </div>
   <div class="terminal" [ngSwitch]="selectionBasic.value">
     <pre *ngSwitchDefault>... click to view</pre>
-    <pre *ngSwitchCase="'thing'">Thing</pre>
+    <pre *ngSwitchCase="'Components'">Components
+- create new component via CLI
+- ensure that main app is aware of component
+- styles and template can be inline or separate files
+- add @Input and @Output for data communication with component as needed
+- Use [] to bind from source to view
+- Use () to bind from view to source
+- Use [()] to bind in a two-way sequence of view to source to view
+    </pre>
+    <pre *ngSwitchCase="'Templates'">Templates</pre>
+    <pre *ngSwitchCase="'Modules'">Modules</pre>
+    <pre *ngSwitchCase="'DependencyInjection'">DependencyInjection</pre>
+    <pre *ngSwitchCase="'Services'">Services</pre>
+    <pre *ngSwitchCase="'Routing'">Routing</pre>
   </div>
 </div>

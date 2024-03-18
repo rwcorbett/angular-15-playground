@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TabCLIComponent } from './tab-cli/tab-cli.component';
 import { TabBasicsComponent } from './tab-basics/tab-basics.component';
+import { CardLabelComponent } from './card-label/card-label.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabCLIComponent,
-    TabBasicsComponent
+    TabBasicsComponent,
+    CardLabelComponent
   ],
   imports: [
     BrowserModule,
