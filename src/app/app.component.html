@@ -59,13 +59,13 @@ Angular: 13.3.12
     </div>
 
     <div [ngSwitch]="tabSelection.value">
-      <div *ngSwitchDefault></div>
+      <div *ngSwitchDefault class="tab-default"><p>...select a tab to display commands.</p></div>
       <!-- todo: fix `labelled-by` -->
       <div *ngSwitchCase="'basics'" class="tabs--tabs-wrapper" id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
-        <app-tab-basics></app-tab-basics>
+        <app-tab-basics [classList]="'tab-active ' + tabSelection.value"></app-tab-basics>
       </div>
       <div *ngSwitchCase="'cli'" class="tabs--tabs-wrapper" id="tabpanel-1" role="tabpanel" aria-labelledby="tab-1">
-        <app-tab-cli></app-tab-cli>
+        <app-tab-cli [classList]="'tab-active ' + tabSelection.value"></app-tab-cli>
       </div>
     </div>
   </div>
