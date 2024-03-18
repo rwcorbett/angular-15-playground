@@ -12,48 +12,39 @@
   1. up to v14: `ng update @angular/core@14 @angular/cli@14`
      - commit to repo
   2. up to v15: `ng update @angular/core@15 @angular/cli@15`
+     - commit to repo
 
 # Versions
 
 [Version compatibility](https://angular.io/guide/versions)
 
-Angular Core/CLI: `15.1.x`
-Node: `^14.20.0` || `^16.13.0` || `^18.10.0`
-TypeScript: `~4.8.2`
-RxJS: `^6.5.3` || `^7.4.0`
+- Angular Core/CLI: *`15.2.x`*
+- Node: *`16.20.2`* (`^14.20.0` || `^16.13.0` || `^18.10.0`)
+- TypeScript: *`4.9.5`* (`~4.8.2`)
+- RxJS: *`7.5.7`* (`^6.5.3` || `^7.4.0`)
 
-> $ `ng --version`
+> $ `ng version`
 ```sh
-pending
+Angular CLI: 15.2.10
+Node: 16.20.2
+Package Manager: npm 8.19.4
+OS: darwin arm64
+
+Angular: 15.2.10
+... animations, cli, common, compiler, compiler-cli, core, forms
+... platform-browser, platform-browser-dynamic, router
+
+Package                         Version
+---------------------------------------------------------
+@angular-devkit/architect       0.1502.10
+@angular-devkit/build-angular   15.2.10
+@angular-devkit/core            15.2.10
+@angular-devkit/schematics      15.2.10
+@schematics/angular             15.2.10
+rxjs                            7.5.7
+typescript                      4.9.5
 
 ```
 
 ===
 
-# MyApp
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
