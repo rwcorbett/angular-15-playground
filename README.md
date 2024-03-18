@@ -1,31 +1,26 @@
 # Setup
 
 - install `Node LTS 16.20.2`
-- install older version of CLI `npm install -g @angular/cli@13`
-- use CLI to create app `ng new playground --directory angular-13-playground`
+- remove CLI v13 and install v15
+  - remove v13 `npm remove -g @angular/cli@13`
+  - install v15 `npm install -g @angular/cli@15`
+  - *- may require su -*
+- upgrade from v13: [Angular upgrade guide](https://update.angular.io/?v=13.0-15.0)
+  - `ng update @angular/core@14 @angular/cli@14`
 
 # Versions
 
+[Version compatibility](https://angular.io/guide/versions)
+
+Angular Core/CLI: `15.1.x`
+Node: `^14.20.0` || `^16.13.0` || `^18.10.0`
+TypeScript: `~4.8.2`
+RxJS: `^6.5.3` || `^7.4.0`
+
+> $ `ng --version`
 ```sh
-Angular CLI: 13.3.11
-Node: 16.20.2
-Package Manager: npm 8.19.4
-OS: darwin arm64
+pending
 
-Angular: 13.3.12
-... animations, common, compiler, compiler-cli, core, forms
-... platform-browser, platform-browser-dynamic, router
-
-Package                         Version
----------------------------------------------------------
-@angular-devkit/architect       0.1303.11
-@angular-devkit/build-angular   13.3.11
-@angular-devkit/core            13.3.11
-@angular-devkit/schematics      13.3.11
-@angular/cli                    13.3.11
-@schematics/angular             13.3.11
-rxjs                            7.5.7
-typescript                      4.6.4
 ```
 
 ===
