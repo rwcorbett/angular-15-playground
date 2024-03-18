@@ -1,12 +1,17 @@
 # Setup
 
-- install `Node LTS 16.20.2`
+- install Node LTS `16.20.2` (or LTS v18)
+- ensure Angular core (`@angular/core`) is installed in project
+  - run `npm i` to ensure it is installed
 - remove CLI v13 and install v15
   - remove v13 `npm remove -g @angular/cli@13`
   - install v15 `npm install -g @angular/cli@15`
   - *- may require su -*
+- commit to repo (upgrade should be done on non-dirty repo)
 - upgrade from v13: [Angular upgrade guide](https://update.angular.io/?v=13.0-15.0)
-  - `ng update @angular/core@14 @angular/cli@14`
+  1. up to v14: `ng update @angular/core@14 @angular/cli@14`
+     - commit to repo
+  2. up to v15: `ng update @angular/core@15 @angular/cli@15`
 
 # Versions
 
