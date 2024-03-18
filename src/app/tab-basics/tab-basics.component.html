@@ -47,13 +47,17 @@
     <pre *ngSwitchCase="'Modules'">Modules</pre>
 
     <pre *ngSwitchCase="'DependencyInjection'">DependencyInjection
-- bring services into components
+- bring services and access to resources into components
+- use (@)Injectable() decorator, application-wide root injector
     </pre>
 
     <pre *ngSwitchCase="'Services'">Services
 - share logic across components, narrow, well-defined purpose
 - use services for things that do not involve view or app logic (fetch data, validate, logging)
-- service class definition use (@)Injectable90 decorator to pass metadata
+- service class definition use (@)Injectable() decorator - for DI - to pass metadata
+- services at 'root' create singleton instance and injects that into components -> (@)Injectable passed
+- services passed at component will create new instances of service with each new component that uses it -> (@)Component declared
+- Angular will do tree-shaking to remove unused services
     </pre>
 
     <pre *ngSwitchCase="'Routing'">Routing</pre>
