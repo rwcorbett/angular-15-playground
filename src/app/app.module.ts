@@ -7,6 +7,7 @@ import { TabCLIComponent } from './tab-cli/tab-cli.component';
 import { TabBasicsComponent } from './tab-basics/tab-basics.component';
 import { CardLabelComponent } from './card-label/card-label.component';
 import { Logging } from './logger.service';
+import { DummyDataModule } from './dummy/dummy-data/dummy-data.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { Logging } from './logger.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DummyDataModule
   ],
   providers: [],
   bootstrap: [AppComponent]

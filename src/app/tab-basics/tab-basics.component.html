@@ -23,11 +23,15 @@
     <button class="card card-small" (click)="selectionBasic.value = 'Routing'" tabindex="0">
       <app-card-label cardName="Routing"></app-card-label>
     </button>
+    <button class="card card-small" (click)="selectionBasic.value = 'Libraries'" tabindex="0">
+      <app-card-label cardName="Libraries"></app-card-label>
+    </button>
   </div>
   <div class="terminal" [ngSwitch]="selectionBasic.value">
     <pre *ngSwitchDefault>... click to view</pre>
 
     <pre *ngSwitchCase="'Components'">Components
+$ ng generate component [name]
 - create new component via CLI
 - (@)Component() decorator identifies the class immediately below it
 - ensure that main app is aware of component
@@ -45,15 +49,23 @@
     </pre>
 
     <pre *ngSwitchCase="'Modules'">Modules
+$ ng generate module [name]
 - defined by a class decorated with (@)NgModule() decorator
+- view hierarchy can mix views defined in components that belong to different NgModules
+- all Angular apps have at least the root module that is used to bootstrap
     </pre>
 
     <pre *ngSwitchCase="'DependencyInjection'">DependencyInjection
 - bring services and access to resources into components
 - use (@)Injectable() decorator, application-wide root injector
+- can inject a service directly into an instance of a component, instead of sharing the service for app root
+- inject using 'providers', using `inject([thing])`, or as passed to the class constructor
+- (@)Optional property decorator returns null when not found
+- (@)Host property decorator stops the upward search at the _host_ component
     </pre>
 
     <pre *ngSwitchCase="'Services'">Services
+$  ng generate service [name]
 - share logic across components, narrow, well-defined purpose
 - use services for things that do not involve view or app logic (fetch data, validate, logging)
 - service class definition use (@)Injectable() decorator - for DI - to pass metadata
@@ -63,5 +75,12 @@
     </pre>
 
     <pre *ngSwitchCase="'Routing'">Routing</pre>
+
+    <pre *ngSwitchCase="'Libraries'">Libraries
+$ ng generate library [name]
+- Angular uses a collection of JS modules - think of them as library modules
+- consist of Components, Directives, Sevices, data, functions
+- Angular library names begins with the `(@)angular` prefix
+    </pre>
   </div>
 </div>

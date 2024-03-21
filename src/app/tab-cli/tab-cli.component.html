@@ -27,10 +27,10 @@
 
   <div class="terminal" [ngSwitch]="selectionCLI.value">
     <pre *ngSwitchDefault>... click to view</pre>
-    <pre *ngSwitchCase="'component'">ng generate component xyz</pre>
+    <pre *ngSwitchCase="'component'">ng generate component [name]</pre>
     <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
     <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
-    <pre *ngSwitchCase="'dependency'">ng add _____</pre>
+    <pre *ngSwitchCase="'dependency'">ng add [collection]</pre>
     <pre *ngSwitchCase="'test'">ng test</pre>
     <pre *ngSwitchCase="'build'">ng build</pre>
   </div>
