@@ -37,8 +37,9 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Chrome'], // https://karma-runner.github.io/6.4/config/browsers.html
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+
   });
 };

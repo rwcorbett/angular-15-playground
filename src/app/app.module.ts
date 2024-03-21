@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TabCLIComponent } from './tab-cli/tab-cli.component';
 import { TabBasicsComponent } from './tab-basics/tab-basics.component';
 import { CardLabelComponent } from './card-label/card-label.component';
+import { Logging } from './logger.service';
 
 @NgModule({
   declarations: [
@@ -21,4 +22,8 @@ import { CardLabelComponent } from './card-label/card-label.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private logger: Logging) {
+    logger.log("starting AppModule")
+  }
+}

@@ -5,22 +5,29 @@ import { Injectable } from '@angular/core';
 })
 export class Logging {
 
-  constructor() { }
+  prefix: string;
+
+  constructor() {
+    this.prefix = "~~ ";
+  }
+
+  addPrefix = (msg: string) => {
+    return this.prefix + msg;
+  }
 
   log(msg: any) {
     // todo: depends on environment
-    console.debug(msg);
+    console.debug(this.addPrefix(msg));
     // if prod
-    console.log(msg);
+    // console.log(this.addPrefix(msg));
   }
   error(msg: any) {
     // todo: depends on environment
-    console.error(msg);
+    console.error(this.addPrefix(msg));
   }
   warn(msg: any) {
     // todo: depends on environment
-    console.warn(msg);
+    console.warn(this.addPrefix(msg));
   }
-
 
 }

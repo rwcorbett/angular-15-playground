@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private logger: Logging) {
     const version = "15"; // todo: set dynamically?
     this.title = `Playground ${version}`;
-    logger.log(`~~ starting ${this.title}`);
+    logger.log(`starting ${this.title}`);
   }
 
   title: string; // todo: test this
