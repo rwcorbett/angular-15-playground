@@ -1,6 +1,6 @@
 # Setup
 
-- install Node LTS `16.20.2` (or LTS v18)
+- install Node LTS `18.19.1` (or LTS v20)
 - ensure Angular core (`@angular/core`) is installed in project
   - run `npm i` to ensure it is installed
 - remove CLI v13 and install v15
@@ -19,15 +19,15 @@
 [Version compatibility](https://angular.io/guide/versions)
 
 - Angular Core/CLI: *`15.2.x`*
-- Node: *`16.20.2`* (`^14.20.0` || `^16.13.0` || `^18.10.0`)
+- Node: *`18.19.1`* (`^14.20.0` || `^16.13.0` || `^18.10.0`)
 - TypeScript: *`4.9.5`* (`~4.8.2`)
 - RxJS: *`7.5.7`* (`^6.5.3` || `^7.4.0`)
 
 > $ `ng version`
 ```sh
 Angular CLI: 15.2.10
-Node: 16.20.2
-Package Manager: npm 8.19.4
+Node: 18.19.1
+Package Manager: npm 10.2.4
 OS: darwin arm64
 
 Angular: 15.2.10
@@ -36,9 +36,9 @@ Angular: 15.2.10
 
 Package                         Version
 ---------------------------------------------------------
-@angular-devkit/architect       0.1502.10
+@angular-devkit/architect       0.1703.1
 @angular-devkit/build-angular   15.2.10
-@angular-devkit/core            15.2.10
+@angular-devkit/core            17.3.1
 @angular-devkit/schematics      15.2.10
 @schematics/angular             15.2.10
 rxjs                            7.5.7
@@ -46,5 +46,23 @@ typescript                      4.9.5
 
 ```
 
+# Storybook
+
+- requires Nodejs v18
+  - install [latest v18](https://nodejs.org/dist/latest-v18.x/)
+
+`npm i -D storybook@latest @storybook/angular`
+
+`$ npx storybook init`
+
+- added [Compodoc](https://compodoc.app/) documentation tool for Angular
+
 ===
 
+# TODOs
+
+- [] create modules/libraries for cards
+- [] create modules/libraries for tabs
+- [] setup Jest
+- [] basic Storybook integration
+- [] add Routing
