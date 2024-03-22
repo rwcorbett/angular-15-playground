@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DummyDataAPIComponent } from '../dummy-data-api/dummy-data-api.component';
 
-
 @NgModule({
   declarations: [
     DummyDataAPIComponent
@@ -10,6 +9,10 @@ import { DummyDataAPIComponent } from '../dummy-data-api/dummy-data-api.componen
   imports: [
     CommonModule
   ],
-  exports: [ DummyDataAPIComponent ]
+  exports: [DummyDataAPIComponent]
 })
-export class DummyDataModule { }
+export class DummyDataModule {
+  constructor() {
+    console.debug("-------load DummyDataModule");
+  }
+}

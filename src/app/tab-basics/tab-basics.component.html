@@ -24,6 +24,9 @@
   <button class="card card-small" (click)="selectionBasic.value = 'Libraries'" tabindex="0">
     <app-card-label cardName="Libraries"></app-card-label>
   </button>
+  <button class="card card-small" (click)="selectionBasic.value = 'HTTP'" tabindex="0">
+    <app-card-label cardName="HTTP"></app-card-label>
+  </button>
 </div>
 <div class="terminal" [ngSwitch]="selectionBasic.value">
   <pre *ngSwitchDefault>... click to view</pre>
@@ -39,6 +42,11 @@ $ ng generate component [name]
 - Use [] to bind from source to view
 - Use () to bind from view to source
 - Use [()] to bind in a two-way sequence of view to source to view
+    </pre>
+
+  <pre *ngSwitchCase="'HTTP'">HTTP
+- must import HttpClientModule into app root
+- service or module or component then can create instance of HttpClient
     </pre>
 
   <pre *ngSwitchCase="'Templates'">Templates
