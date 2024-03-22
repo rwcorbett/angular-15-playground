@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { Routes, RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutes } from './app.routes.module';
 import { AppComponent } from './app.component';
 
 import { DummyDataModule } from './dummy/dummy-data/dummy-data.module';
@@ -12,11 +11,6 @@ import { TabBasicsComponent } from './tab-basics/tab-basics.component';
 import { CardLabelComponent } from './card-label/card-label.component';
 
 import { Logging } from './logger.service';
-
-const appRoutes: Routes = [
-  { path: 'CLI', component: TabCLIComponent },
-  { path: 'Basic', component: TabBasicsComponent },
-];
 
 @NgModule({
   declarations: [
@@ -28,10 +22,7 @@ const appRoutes: Routes = [
   imports: [
     DummyDataModule,
     BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot(
-      appRoutes, { enableTracing: true }  // <-- debugging purposes only
-    )
+    AppRoutes
   ],
   providers: [],
   bootstrap: [AppComponent]
