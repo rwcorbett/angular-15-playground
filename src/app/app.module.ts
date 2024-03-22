@@ -11,13 +11,17 @@ import { TabBasicsComponent } from './tab-basics/tab-basics.component';
 import { CardLabelComponent } from './card-label/card-label.component';
 
 import { Logging } from './logger.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { TabHomeComponent } from './tab-home/tab-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabCLIComponent,
     TabBasicsComponent,
-    CardLabelComponent
+    CardLabelComponent,
+    ErrorPageComponent,
+    TabHomeComponent
   ],
   imports: [
     DummyDataModule,

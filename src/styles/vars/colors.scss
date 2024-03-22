@@ -1,7 +1,9 @@
 :root {
   --angular-blue: #1976d2;
+  --angular-dark-red: #c3002f;
 }
 $angular-blue: var(--angular-blue);
+$angular-dark-red: var(--angular-dark-red);
 
 $text-body: #333;
 $header-bg: $angular-blue;

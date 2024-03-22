@@ -35,6 +35,7 @@ $ ng generate component [name]
 - create new component via CLI
 - (@)Component() decorator identifies the class immediately below it
 - ensure that main app is aware of component
+- may need to generate in specific location `ng generate component [anme] -m ./`
 - styles and template can be inline or separate files
 - add @Input and @Output for data communication with component as needed
 - Use [] to bind from source to view
@@ -77,7 +78,7 @@ $  ng generate service [name]
     <pre *ngSwitchCase="'Routing'">Routing
 - routes to define how users navigate from one part of your application to another
 - can use as SPA or to redirect to another view or page
-- routes managed in `app.routes.ts`
+- routes managed in `app.routes.ts` (ensure it is in main app module)
 - create a 'RouterLink' to direct to the new content
     </pre>
 
