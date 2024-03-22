@@ -1,37 +1,34 @@
-<div class="container-wrapper tab-cli">
+<input type="hidden" #selectionCLI>
 
-  <input type="hidden" #selectionCLI>
+<h2 class="card highlight-card">ng CLI</h2>
 
-  <h2 class="card highlight-card">ng CLI</h2>
+<div class="card-container">
+  <button class="card card-small" (click)="selectionCLI.value = 'component'" tabindex="0">
+    <app-card-label cardName="New Component"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionCLI.value = 'material'" tabindex="0">
+    <app-card-label cardName="Angular Material"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionCLI.value = 'pwa'" tabindex="0">
+    <app-card-label cardName="Add PWA Support"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionCLI.value = 'dependency'" tabindex="0">
+    <app-card-label cardName="Add Dependency"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionCLI.value = 'test'" tabindex="0">
+    <app-card-label cardName="Run and Watch Tests"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionCLI.value = 'build'" tabindex="0">
+    <app-card-label cardName="Build for Production"></app-card-label>
+  </button>
+</div>
 
-  <div class="card-container">
-    <button class="card card-small" (click)="selectionCLI.value = 'component'" tabindex="0">
-      <app-card-label cardName="New Component"></app-card-label>
-    </button>
-    <button class="card card-small" (click)="selectionCLI.value = 'material'" tabindex="0">
-      <app-card-label cardName="Angular Material"></app-card-label>
-    </button>
-    <button class="card card-small" (click)="selectionCLI.value = 'pwa'" tabindex="0">
-      <app-card-label cardName="Add PWA Support"></app-card-label>
-    </button>
-    <button class="card card-small" (click)="selectionCLI.value = 'dependency'" tabindex="0">
-      <app-card-label cardName="Add Dependency"></app-card-label>
-    </button>
-    <button class="card card-small" (click)="selectionCLI.value = 'test'" tabindex="0">
-      <app-card-label cardName="Run and Watch Tests"></app-card-label>
-    </button>
-    <button class="card card-small" (click)="selectionCLI.value = 'build'" tabindex="0">
-      <app-card-label cardName="Build for Production"></app-card-label>
-    </button>
-  </div>
-
-  <div class="terminal" [ngSwitch]="selectionCLI.value">
-    <pre *ngSwitchDefault>... click to view</pre>
-    <pre *ngSwitchCase="'component'">ng generate component [name]</pre>
-    <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
-    <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
-    <pre *ngSwitchCase="'dependency'">ng add [collection]</pre>
-    <pre *ngSwitchCase="'test'">ng test</pre>
-    <pre *ngSwitchCase="'build'">ng build</pre>
-  </div>
+<div class="terminal" [ngSwitch]="selectionCLI.value">
+  <pre *ngSwitchDefault>... click to view</pre>
+  <pre *ngSwitchCase="'component'">ng generate component [name]</pre>
+  <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
+  <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
+  <pre *ngSwitchCase="'dependency'">ng add [collection]</pre>
+  <pre *ngSwitchCase="'test'">ng test</pre>
+  <pre *ngSwitchCase="'build'">ng build</pre>
 </div>
