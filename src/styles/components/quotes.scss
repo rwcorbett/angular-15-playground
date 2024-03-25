@@ -12,7 +12,7 @@ dummy-data-api {
 
     &::before {
       content: "-";
-      margin-right: $common-spacing / 4;
+      margin-right: calc($common-spacing / 4);
     }
   }
 
@@ -23,7 +23,7 @@ dummy-data-api {
     color: $svg-smoke;
 
     span {
-      margin-left: $common-spacing / 4;
+      margin-left: calc($common-spacing / 4);
     }
   }
 }
