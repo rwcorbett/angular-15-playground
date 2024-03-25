@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient, HttpParams } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
 
-export interface QuoteResponse {
+interface QuoteResponse {
   statusCode: number
   message: string
   pagination: QuotePagination
@@ -11,25 +10,18 @@ export interface QuoteResponse {
   data: QuoteData[]
 }
 
-export interface QuotePagination {
+interface QuotePagination {
   currentPage: number
   nextPage: any
   totalPages: number
 }
 
-export interface QuoteData {
+interface QuoteData {
   _id: string
   quoteText: string
   quoteAuthor: string
   quoteGenre: string
   __v: number
-}
-
-interface Quote {
-  id: string
-  author: string
-  genre: string
-  text: string
 }
 
 @Injectable({
@@ -42,32 +34,17 @@ export class DummyFetchService {
    * https://github.com/pprathameshmore/QuoteGarden
    *
    */
-  fetchQuote = async (client: HttpClient) => {
-    client.get<QuoteResponse>(this.quoteUrl, {
+  fetchQuote(): Observable<any> {
+    return this.client.get<QuoteResponse>(this.quoteUrl, {
       observe: 'response',
       responseType: 'json'
     })
-    // .pipe((resp) => {
-    .subscribe((resp) => {
-      const dataObj = resp.body?.data[0];
-      const quote = {
-        id: dataObj?._id,
-        author: dataObj?.quoteAuthor,
-        genre: dataObj?.quoteGenre,
-        text: dataObj?.quoteText
-      }
-      return quote;
-    });
   }
 
   quoteUrl = "https://quote-garden.onrender.com/api/v3/quotes/random";
-  // quote: Quote;
-  quote: any;
 
   constructor(private client: HttpClient) {
-    // this.quote = {};
-    console.debug("-------load DummyFetchService");
-    this.quote = this.fetchQuote(client);
+    // console.debug("2-------load DummyFetchService");
   }
 
 }

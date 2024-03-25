@@ -13,6 +13,6 @@ import { DummyDataAPIComponent } from '../dummy-data-api/dummy-data-api.componen
 })
 export class DummyDataModule {
   constructor() {
-    console.debug("-------load DummyDataModule");
+    // console.debug("1-------load DummyDataModule");
   }
 }
