@@ -11,6 +11,13 @@
   align-items: center;
   transition: all 0.2s ease-in-out;
 
+  &.active-card {
+    background-color: $angular-dark-red;
+    color: $white;
+    font-size: larger;
+    font-weight: 800;
+  }
+
   &.card-small {
     flex: 1 1 auto;
     min-width: 33%;

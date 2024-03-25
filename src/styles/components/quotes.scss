@@ -1,0 +1,29 @@
+dummy-data-api {
+  padding: $common-spacing;
+
+  q {
+    font-size: x-large;
+    font-style: italic;
+  }
+
+  .author {
+    margin-top: $common-spacing;
+    text-align: right;
+
+    &::before {
+      content: "-";
+      margin-right: calc($common-spacing / 4);
+    }
+  }
+
+  .metadata {
+
+    text-align: right;
+    font-size: x-small;
+    color: $svg-smoke;
+
+    span {
+      margin-left: calc($common-spacing / 4);
+    }
+  }
+}

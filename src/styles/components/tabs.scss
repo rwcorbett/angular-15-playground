@@ -14,17 +14,14 @@
     }
   }
 
-  div[role="tabpanel"], .tab-default {
+  .tabs-wrapper{
     padding: $common-spacing;
     margin-bottom: $common-spacing;
     border: 1px solid $dark-grey;
     border-radius: $common-border-radius;
     background-color: $dark-grey-fade;
-
-    .tab-active {
-      .container-wrapper {}
-    }
   }
+
   .tab-default {
     p {
       padding: $common-spacing;

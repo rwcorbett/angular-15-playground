@@ -1,40 +1,42 @@
-<div class="container-wrapper tab-basics">
+<input type="hidden" #selectionBasic>
 
-  <input type="hidden" #selectionBasic>
+<h2 class="card highlight-card">ng Basics</h2>
 
-  <h2 class="card highlight-card">ng Basics</h2>
+<div class="card-container">
+  <button class="card card-small" (click)="selectionBasic.value = 'Components'" tabindex="0">
+    <app-card-label cardName="Components"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionBasic.value = 'Templates'" tabindex="0">
+    <app-card-label cardName="Templates & Data"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionBasic.value = 'Modules'" tabindex="0">
+    <app-card-label cardName="Modules"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionBasic.value = 'DependencyInjection'" tabindex="0">
+    <app-card-label cardName="Dependency Injection"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionBasic.value = 'Services'" tabindex="0">
+    <app-card-label cardName="Services"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionBasic.value = 'Routing'" tabindex="0">
+    <app-card-label cardName="Routing"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionBasic.value = 'Libraries'" tabindex="0">
+    <app-card-label cardName="Libraries"></app-card-label>
+  </button>
+  <button class="card card-small" (click)="selectionBasic.value = 'HTTP'" tabindex="0">
+    <app-card-label cardName="HTTP"></app-card-label>
+  </button>
+</div>
+<div class="terminal" [ngSwitch]="selectionBasic.value">
+  <pre *ngSwitchDefault>... click to view</pre>
 
-  <div class="card-container">
-    <button class="card card-small" (click)="selectionBasic.value = 'Components'" tabindex="0">
-      <app-card-label cardName="Components"></app-card-label>
-    </button>
-    <button class="card card-small" (click)="selectionBasic.value = 'Templates'" tabindex="0">
-      <app-card-label cardName="Templates & Data"></app-card-label>
-    </button>
-    <button class="card card-small" (click)="selectionBasic.value = 'Modules'" tabindex="0">
-      <app-card-label cardName="Modules"></app-card-label>
-    </button>
-    <button class="card card-small" (click)="selectionBasic.value = 'DependencyInjection'" tabindex="0">
-      <app-card-label cardName="Dependency Injection"></app-card-label>
-    </button>
-    <button class="card card-small" (click)="selectionBasic.value = 'Services'" tabindex="0">
-      <app-card-label cardName="Services"></app-card-label>
-    </button>
-    <button class="card card-small" (click)="selectionBasic.value = 'Routing'" tabindex="0">
-      <app-card-label cardName="Routing"></app-card-label>
-    </button>
-    <button class="card card-small" (click)="selectionBasic.value = 'Libraries'" tabindex="0">
-      <app-card-label cardName="Libraries"></app-card-label>
-    </button>
-  </div>
-  <div class="terminal" [ngSwitch]="selectionBasic.value">
-    <pre *ngSwitchDefault>... click to view</pre>
-
-    <pre *ngSwitchCase="'Components'">Components
+  <pre *ngSwitchCase="'Components'">Components
 $ ng generate component [name]
 - create new component via CLI
 - (@)Component() decorator identifies the class immediately below it
 - ensure that main app is aware of component
+- may need to generate in specific location `ng generate component [anme] -m ./`
 - styles and template can be inline or separate files
 - add @Input and @Output for data communication with component as needed
 - Use [] to bind from source to view
@@ -42,20 +44,25 @@ $ ng generate component [name]
 - Use [()] to bind in a two-way sequence of view to source to view
     </pre>
 
-    <pre *ngSwitchCase="'Templates'">Templates
+  <pre *ngSwitchCase="'HTTP'">HTTP
+- must import HttpClientModule into app root
+- service or module or component then can create instance of HttpClient
+    </pre>
+
+  <pre *ngSwitchCase="'Templates'">Templates
 - combines HTML with Angular markup
 - data binding: Event binding (input or data) or Property binding (computed values)
 - two-way data binding; changes in the DOM, such as user choices, are also reflected in your program data
     </pre>
 
-    <pre *ngSwitchCase="'Modules'">Modules
+  <pre *ngSwitchCase="'Modules'">Modules
 $ ng generate module [name]
 - defined by a class decorated with (@)NgModule() decorator
 - view hierarchy can mix views defined in components that belong to different NgModules
 - all Angular apps have at least the root module that is used to bootstrap
     </pre>
 
-    <pre *ngSwitchCase="'DependencyInjection'">DependencyInjection
+  <pre *ngSwitchCase="'DependencyInjection'">DependencyInjection
 - bring services and access to resources into components
 - use (@)Injectable() decorator, application-wide root injector
 - can inject a service directly into an instance of a component, instead of sharing the service for app root
@@ -64,7 +71,7 @@ $ ng generate module [name]
 - (@)Host property decorator stops the upward search at the _host_ component
     </pre>
 
-    <pre *ngSwitchCase="'Services'">Services
+  <pre *ngSwitchCase="'Services'">Services
 $  ng generate service [name]
 - share logic across components, narrow, well-defined purpose
 - use services for things that do not involve view or app logic (fetch data, validate, logging)
@@ -74,13 +81,18 @@ $  ng generate service [name]
 - Angular will do tree-shaking to remove unused services
     </pre>
 
-    <pre *ngSwitchCase="'Routing'">Routing</pre>
+  <pre *ngSwitchCase="'Routing'">Routing
+- routes to define how users navigate from one part of your application to another
+- can use as SPA or to redirect to another view or page
+- routes managed in `app.routes.ts` (ensure it is in main app module)
+- create a 'RouterLink' to direct to the new content
+- routerLink can be a single URL or array of pages and params
+    </pre>
 
-    <pre *ngSwitchCase="'Libraries'">Libraries
+  <pre *ngSwitchCase="'Libraries'">Libraries
 $ ng generate library [name]
 - Angular uses a collection of JS modules - think of them as library modules
 - consist of Components, Directives, Sevices, data, functions
 - Angular library names begins with the `(@)angular` prefix
     </pre>
-  </div>
 </div>
